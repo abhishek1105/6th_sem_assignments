@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LOGIN</title>
+	<style>
+	body{
+    background: radial-gradient(red, black);
+   }
+   .button1{
+     color:white;
+     background-color:cyan;
+     border:none;
+     padding:12px 24px;
+     margin-left:70px;
+     margin-top:10px;
+     cursor:pointer;
+     border-radius:10px;
+
+   }
+   	.log{
+
+opacity: 0.5;
+	text-align:center;
+	font-family:Courier New;
+	font-size:40px;
+	color:#444;
+	}
+
+	.frm{
+
+    background: radial-gradient(#FFE4B5, white);
+    height:420px;
+    width:350px;
+    margin:auto;
+    border-radius:30px;
+    box-shadow:5px 5px 5px black;
+    margin-top:5%;
+  	}
+	.abc{
+	border-radius:5px;
+	height:40px;
+	width:250px
+
+	}
+	.inp{
+	font-size:20px;
+  font-weight:Courier New;
+	}
+
+	.acc1{
+	float:left;
+	}
+	.acc{
+	float:left;
+	}
+	.forgot_pass{
+	float:left;
+
+	}
+
+	.csf{
+            font-family:Courier New;
+            text-decoration:none;
+            font-weight: bold;
+            color:black;
+            border-radius: 5px;
+
+
+	}
+
+
+
+</style>
+  </head>
+<body>
+    <div class="frm">
+      <form name="myform" action="#" method="get" onsubmit="return myvalidation()">
+            <table align="center" >
+                <tr><th class="log">Log In</th></tr>
+                <tr><td class="inp">USERNAME</td></tr>
+                <tr><td><input class="abc" type="text" name="user" placeholder="eg.abc123" required></td></tr>
+                <tr><td class="inp" >PASSWORD</td></tr>
+                <tr><td><input class="abc" id="myInput" type="password" name="password" required placeholder="*********"></td></tr>
+                <tr><td>
+                  <input type="radio" name="log-type" value="student" checked>STUDENT
+                  <input type="radio" name="log-type" value="facul">FACULTY<br></td></tr>
+                <tr><td><button type="button" name="button"  class="button1" onclick="myvalidation()" >LOGIN</button></td></tr>
+              	</table>
+              	</form>
+                <script>
+                    function myvalidation(){
+                    var value1=document.forms["myform"]["user"].value;
+                    var value2=document.forms["myform"]["password"].value;
+                    var value3=document.forms["myform"]["log-type"].value;
+                    if(value1 == ""){
+                    alert("USERNAME Field cannot be empty");
+                    flag= false;
+                  }
+                  if(value2 ==   ""){
+                  alert("PASSWORD Field cannot be empty");
+                  flag=false;
+                }
+              if(value3!="student" && value3!="facul"){
+                  alert("invalid value");
+                  flag=false;
+                }
+                return flag;
+
+              }
+            </script>
+            <div class="forgot_pass">
+              <a href="" class="csf" onclick="forgot_pass()">FORGOT PASSWORD?</a>
+        </div>
+        <BR><BR>
+
+          <div class="acc">
+      <a href="SIGNUP.html" class="csf">CREATE NEW ACCOUNT?</a>
+
+	</div>
+            </div>
+ </body>
+ </html>
